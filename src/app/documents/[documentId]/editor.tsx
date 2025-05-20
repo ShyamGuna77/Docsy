@@ -15,9 +15,39 @@ import Image from '@tiptap/extension-image'
 import Underline from "@tiptap/extension-underline";
 import FontFamily from "@tiptap/extension-font-family";
 import TextStyle from "@tiptap/extension-text-style";
+import { useEditorStore } from '@/store/use-editor-store';
 
 const Editor = () => {
+
+   const {setEditor} = useEditorStore();
      const editor = useEditor({
+      autofocus: true,
+      immediatelyRender: false,
+      onCreate({ editor }) {
+        setEditor(editor);
+      },
+      onDestroy() {
+        setEditor(null)
+      },
+      onUpdate({editor}){
+        setEditor(editor) 
+      },
+      onSelectionUpdate({editor}){
+        setEditor(editor)
+      },
+      onTransaction({editor}){
+        setEditor(editor)
+      },
+      onFocus({editor}){
+        setEditor(editor)
+      },
+      onBlur({editor}){
+        setEditor(editor)
+      },
+      onContentError({editor}){
+        setEditor(editor)
+      },
+        
        editorProps: {
          attributes: {
           //  style: `padding-left: ${LEFT_MARGIN_DEFAULT}px; padding-right: ${RIGHT_MARGIN_DEFAULT}px;`,
