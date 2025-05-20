@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/carousel";
 import { templates } from "@/constants/templates";
 
-import { api } from "../../../convex/_generated/api";
+import { api } from "../../convex/_generated/api";
 
 export const TemplatesGallery = () => {
   const router = useRouter();
