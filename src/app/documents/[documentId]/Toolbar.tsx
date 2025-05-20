@@ -4,6 +4,7 @@ import React from 'react'
 import { cn } from '@/lib/utils';
 import { BoldIcon, ItalicIcon, ListTodoIcon, ListTodoIconMessageSquarePlusIcon, , LucideIcon, MessageSquarePlusIcon, PrinterIcon, Redo2Icon, RemoveFormattingIcon, SpellCheckIcon, UnderlineIcon, Undo2Icon } from 'lucide-react';
 import { useEditorStore } from '@/store/use-editor-store';
+import { Separator } from '@/components/ui/separator';
 
 interface ToolbarButtonProps {
     onClick?:() => void;
