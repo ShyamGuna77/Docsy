@@ -34,8 +34,10 @@ interface EditorProps {
 
 export const Editor = ({ initialContent }: EditorProps) => {
   const leftMargin =
+    // @ts-expect-error Liveblocks storage type not configured
     useStorage((root) => root.leftMargin) ?? LEFT_MARGIN_DEFAULT;
   const rightMargin =
+    // @ts-expect-error Liveblocks storage type not configured
     useStorage((root) => root.rightMargin) ?? RIGHT_MARGIN_DEFAULT;
 
   const liveblocks = useLiveblocksExtension({

@@ -1,5 +1,6 @@
 import { auth } from "@clerk/nextjs/server";
 import { preloadQuery } from "convex/nextjs";
+import { notFound } from "next/navigation";
 
 import { Document } from "./document";
 import { api } from "../../../../convex/_generated/api";
@@ -19,13 +20,20 @@ const DocumentIdPage = async ({ params }: DocumentIdPageProps) => {
     throw new Error("Unauthorized");
   }
 
-  const preloadedDocument = await preloadQuery(
-    api.documents.getById,
-    { id: documentId },
-    { token }
-  );
+  try {
+    const preloadedDocument = await preloadQuery(
+      api.documents.getById,
+      { id: documentId },
+      { token }
+    );
 
-  return <Document preloadedDocument={preloadedDocument} />;
+    return <Document preloadedDocument={preloadedDocument} />;
+  } catch (error) {
+    if (error instanceof Error && error.message === "Document not found") {
+      notFound();
+    }
+    throw error;
+  }
 };
 
 export default DocumentIdPage;

@@ -26,12 +26,15 @@ const AvatarStack = () => {
       <div className="flex items-center">
         {currentUser && (
           <div className="relative ml-2">
+            {/* @ts-expect-error Liveblocks user info is not typed */}
             <Avatar src={currentUser.info.avatar} name="You" />
           </div>
         )}
         <div className="flex">
           {users.map(({ connectionId, info }) => {
+          
             return (
+              // @ts-expect-error Liveblocks user info is not typed
               <Avatar key={connectionId} src={info.avatar} name={info.name} />
             );
           })}

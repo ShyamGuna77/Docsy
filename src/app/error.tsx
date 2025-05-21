@@ -32,7 +32,7 @@ const ErrorPage = ({
           Try again
         </Button>
         <Button asChild variant="ghost" className="font-medium">
-          <Link href="/">Go back</Link>
+          <Link href="/landing">Go back</Link>
         </Button>
       </div>
     </div>
