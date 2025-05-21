@@ -8,18 +8,18 @@ const markers = Array.from({ length: 83 }, (_, i) => i);
 
 export const Ruler = () => {
   const leftMargin =
-    // @ts-expect-error Liveblocks storage type not configured
+    
     useStorage((root) => root.leftMargin) ?? LEFT_MARGIN_DEFAULT;
   const setLeftMargin = useMutation(({ storage }, position: number) => {
-    // @ts-expect-error margin is not typed
+    
     storage.set("leftMargin", position);
   }, []);
 
   const rightMargin =
-    // @ts-expect-error Liveblocks storage type not configured
+   
     useStorage((root) => root.rightMargin) ?? RIGHT_MARGIN_DEFAULT;
   const setRightMargin = useMutation(({ storage }, position: number) => {
-    // @ts-expect-error margin is not typed
+  
     storage.set("rightMargin", position);
   }, []);
 

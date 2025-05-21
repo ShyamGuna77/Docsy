@@ -5,17 +5,30 @@ import {
   FloatingThreads,
 } from "@liveblocks/react-tiptap";
 import { Editor } from "@tiptap/react";
+import { toast } from "sonner";
 
 export const Threads = ({ editor }: { editor: Editor | null }) => {
   return (
-    <ClientSideSuspense fallback={null}>
+    <ClientSideSuspense
+      fallback={<div className="loading">Loading threads...</div>}
+    >
       <ThreadsList editor={editor} />
     </ClientSideSuspense>
   );
 };
 
 function ThreadsList({ editor }: { editor: Editor | null }) {
-  const { threads } = useThreads({ query: { resolved: false } });
+  const { threads, error } = useThreads({ query: { resolved: false } });
+
+  if (error) {
+    console.error("Threads error:", error);
+    toast.error("Failed to load threads");
+    return null;
+  }
+
+  if (!editor) {
+    return null;
+  }
 
   return (
     <>
