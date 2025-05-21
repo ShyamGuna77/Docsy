@@ -42,9 +42,9 @@ import {
 } from "@/components/ui/menubar";
 import { useEditorStore } from "@/store/use-editor-store";
 
-// import { Inbox } from "./inbox";
-// import { Avatars } from "./avatars";
-// import { DocumentInput } from "./document-input";
+import { Inbox } from "./inbox";
+import { Avatars } from "./avatars";
+import { DocumentInput } from "./document-input";
 import { api } from "../../../../convex/_generated/api";
 import { Doc } from "../../../../convex/_generated/dataModel";
 
@@ -122,7 +122,7 @@ export const Navbar = ({ data }: NavbarProps) => {
           <Image src="/logo.svg" alt="Logo" width={36} height={36} />
         </Link>
         <div className="flex flex-col">
-          {/* <DocumentInput title={data.title} id={data._id} /> */}
+          <DocumentInput title={data.title} id={data._id} />
           <div className="flex">
             <Menubar className="border-none bg-transparent shadow-none h-auto p-0">
               <MenubarMenu>
@@ -296,8 +296,8 @@ export const Navbar = ({ data }: NavbarProps) => {
         </div>
       </div>
       <div className="flex gap-3 items-center pl-6">
-        {/* <Avatars />
-        <Inbox /> */}
+        <Avatars />
+        <Inbox />
         <OrganizationSwitcher
           afterCreateOrganizationUrl="/landing"
           afterLeaveOrganizationUrl="/landing"
