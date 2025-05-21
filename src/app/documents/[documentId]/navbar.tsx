@@ -299,10 +299,10 @@ export const Navbar = ({ data }: NavbarProps) => {
         {/* <Avatars />
         <Inbox /> */}
         <OrganizationSwitcher
-          afterCreateOrganizationUrl="/"
-          afterLeaveOrganizationUrl="/"
-          afterSelectOrganizationUrl="/"
-          afterSelectPersonalUrl="/"
+          afterCreateOrganizationUrl="/landing"
+          afterLeaveOrganizationUrl="/landing"
+          afterSelectOrganizationUrl="/landing"
+          afterSelectPersonalUrl="/landing"
         />
         <UserButton />
       </div>

@@ -12,6 +12,8 @@
     "@clerk/nextjs": "^6.19.5",
     "@liveblocks/client": "^2.24.2",
     "@liveblocks/react": "^2.24.2",
+    "@liveblocks/react-tiptap": "^2.24.2",
+    "@liveblocks/react-ui": "^2.24.2",
     "@radix-ui/react-alert-dialog": "^1.1.14",
     "@radix-ui/react-avatar": "^1.1.9",
     "@radix-ui/react-dialog": "^1.1.13",

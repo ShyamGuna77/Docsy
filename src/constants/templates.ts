@@ -2,7 +2,7 @@ export const templates = [
   {
     id: "blank",
     label: "Blank Document",
-    imageUrl: "/docs/Doc0.svg",
+    imageUrl: "/blank-document.svg",
     initialContent: "",
   },
   {
