@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/table";
 
 import { DocumentRow } from "./document-row";
-import { Doc } from "../../convex/_generated/dataModel";
+import { Doc } from "../../../convex/_generated/dataModel";
 
 interface DocumentsTableProps {
   documents: Doc<"documents">[] | undefined;

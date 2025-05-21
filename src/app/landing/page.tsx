@@ -8,7 +8,7 @@ import { useSearchParam } from "@/hooks/use-search-param";
 import { Navbar } from "./navbar";
 import { DocumentsTable } from "./document-table";
 import { TemplatesGallery } from "./templates-gallery";
-import { api } from "../../convex/_generated/api";
+import { api } from "../../../convex/_generated/api";
 
 const Landing = () => {
   const [search] = useSearchParam();
