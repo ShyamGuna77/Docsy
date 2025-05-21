@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { FaCaretDown } from "react-icons/fa";
 import { useStorage, useMutation } from "@liveblocks/react";
 
-import { RIGHT_MARGIN_DEFAULT, LEFT_MARGIN_DEFAULT } from "@/constants/margin";
+import { RIGHT_MARGIN_DEFAULT,LEFT_MARGIN_DEFAULT } from "@/constants/margin";
 
 const markers = Array.from({ length: 83 }, (_, i) => i);
 
@@ -43,13 +43,11 @@ export const Ruler = () => {
         const rawPosition = Math.max(0, Math.min(PAGE_WIDTH, relativeX));
 
         if (isDraggingLeft) {
-          const maxLeftPosition =
-            PAGE_WIDTH - Number(rightMargin) - MINIMUM_SPACE;
+          const maxLeftPosition = PAGE_WIDTH - rightMargin - MINIMUM_SPACE;
           const newLeftPosition = Math.min(rawPosition, maxLeftPosition);
           setLeftMargin(newLeftPosition);
         } else if (isDraggingRight) {
-          const maxRightPosition =
-            PAGE_WIDTH - (Number(leftMargin) + MINIMUM_SPACE);
+          const maxRightPosition = PAGE_WIDTH - (leftMargin + MINIMUM_SPACE);
           const newRightPosition = Math.max(PAGE_WIDTH - rawPosition, 0);
           const constrainedRightPosition = Math.min(
             newRightPosition,
@@ -84,14 +82,14 @@ export const Ruler = () => {
     >
       <div id="ruler-container" className="w-full h-full relative">
         <Marker
-          position={Number(leftMargin)}
+          position={leftMargin}
           isLeft={true}
           isDragging={isDraggingLeft}
           onMouseDown={handleLeftMouseDown}
           onDoubleClick={handleLeftDoubleClick}
         />
         <Marker
-          position={Number(rightMargin)}
+          position={rightMargin}
           isLeft={false}
           isDragging={isDraggingRight}
           onMouseDown={handleRightMouseDown}
